@@ -1,4 +1,5 @@
 ## importando biblioteca
+## separacao de canais espaços de cores
 import cv2
 
 #carregar imagem
