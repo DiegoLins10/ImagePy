@@ -1,6 +1,6 @@
 import cv2
 
-captura = cv2.VideoCapture("C:/Users/diego.lins/Desktop/python/video.mp4")
+captura = cv2.VideoCapture("./img/video.mp4")
 
 while True:
     ret, frame = captura.read()

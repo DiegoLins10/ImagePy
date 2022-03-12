@@ -1,7 +1,7 @@
 import cv2
 
 
-imagem = cv2.imread("C:/Users/diego.lins/Desktop/python/cachorro.jpg")
+imagem = cv2.imread("./img/cachorro.jpg")
 
 cv2.imshow("imagem", imagem)
 
