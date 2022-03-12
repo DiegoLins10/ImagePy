@@ -11,7 +11,7 @@ imgCinza = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 cv2.imshow("Cinza", imgCinza)
 
 
-## fechar o programa
+## fechar o programa com qualquer tecla == 0
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
