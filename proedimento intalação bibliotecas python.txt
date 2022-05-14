@@ -1,0 +1,16 @@
+Baixar   a nova versão do python
+pip install opencv-python
+pip install pillow
+pip install numpy
+pip install matplotlib
+pip install scikit-learn
+pip install pytesseract
+
+https://github.com/UB-Mannheim/tesseract/wiki
+
+
+pip install --upgrade pip
+
+
+
+
