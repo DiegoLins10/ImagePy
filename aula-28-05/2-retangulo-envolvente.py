@@ -1,31 +1,21 @@
+import numpy as np
 import cv2
-import  numpy as np
 
-imagemRGB = cv2.imread("puzzle.png")
-imagemTonsDeCinza = cv2.imread("puzzle.png", 0)
+cascadeFace = cv2.CascadeClassifier("frontalface.xml")
 
-tipo = cv2.THRESH_BINARY
-ret, imgBinarizada = cv2.threshold(
-    imagemTonsDeCinza, 127, 255, tipo
-)
+imagemOriginal = cv2.imread("selecao.png")
+imagem = cv2.cvtColor(imagemOriginal, cv2.COLOR_BGR2GRAY)
 
-modo = cv2.RETR_TREE
-metodo = cv2.CHAIN_APPROX_SIMPLE
+faces = cascadeFace.detectMultiScale(imagem, 1.3, 5)
 
-contornos, hierarquia = cv2.findContours(
-    imgBinarizada, modo, metodo
-)
+#desenha um retangulo nas faces detectadas
+for (x, y, w, h) in faces:
+    cv2.rectangle(imagemOriginal, (x,y), (x+w, y+h), (000,255,0), 2)
+    
+    
+#exibe o total de faces detectadas
+print(len(faces))
 
-objeto = contornos[0]
-
-#obtendo as verticies do retangulo
-x, y, w, h = cv2.boundingRect(objeto)
-
-#desenhandp o retangulo na imagem imagemRGB
-cv2.rectangle(imagemRGB, (x, y), (x+w, y+h), (0, 255, 0), 2)
-
-cv2.imshow("Retangulo envolvente", imagemRGB)
-print(x, y, w, h)
-
+cv2.imshow("Resultado", imagemOriginal)
 cv2.waitKey(0)
-cv2.destroyAllWindows()
+cv2.destroyAllWindows();    
